@@ -22,8 +22,8 @@ class ServiceController extends Controller
                             "<p><strong>Descripción del caso: </strong>".$request->client_description."</p>";
 
             $data = ["messageMail" => $messageMail, "title" => $request->client_name." ha solicitado un servicio"];
-            $to_name = $user->name;
-            $to_email = $user->email;
+            $to_name = "Admin";
+            $to_email = env('MAIL_FROM_ADDRESS');
 
             \Mail::send("emails.proposalNotification", $data, function($message) use ($to_name, $to_email) {
                 $message->to($to_email, $to_name)->subject("¡Han respondido tu oferta de trabajo!");
