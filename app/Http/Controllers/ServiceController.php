@@ -17,7 +17,7 @@ class ServiceController extends Controller
                             "<p><strong>Nombre: </strong>".$request->client_name."</p>".
                             "<p><strong>RUT: </strong>".$request->client_rut."</p>".
                             "<p><strong>Ciudad: </strong>".$request->client_city."</p>".
-                            "<p><strong>RUT: </strong>".$request->client_commune."</p>".
+                            "<p><strong>Comuna: </strong>".$request->client_commune."</p>".
                             "<p><strong>Correo: </strong>".$request->client_email."</p>".
                             "<p><strong>Teléfono: </strong>".$request->client_phone."</p>".
                             "<p><strong>Descripción del caso: </strong>".$request->client_description."</p>";
