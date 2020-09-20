@@ -3,11 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\ServiceRequest;
 
 class ServiceController extends Controller
 {
     
-    function chooseService(Request $request){
+    function chooseService(ServiceRequest $request){
 
         try{
 
@@ -17,8 +18,8 @@ class ServiceController extends Controller
                             "<p><strong>RUT: </strong>".$request->client_rut."</p>".
                             "<p><strong>Ciudad: </strong>".$request->client_city."</p>".
                             "<p><strong>RUT: </strong>".$request->client_commune."</p>".
-                            "<p><strong>Correo: </strong>".$request->client_emali."</p>".
-                            "<p><strong>Teléfono: </strong>".$request->client_telephone."</p>".
+                            "<p><strong>Correo: </strong>".$request->client_email."</p>".
+                            "<p><strong>Teléfono: </strong>".$request->client_phone."</p>".
                             "<p><strong>Descripción del caso: </strong>".$request->client_description."</p>";
 
             $data = ["messageMail" => $messageMail, "title" => $request->client_name." ha solicitado un servicio"];
@@ -26,9 +27,11 @@ class ServiceController extends Controller
             $to_email = env('MAIL_FROM_ADDRESS');
 
             \Mail::send("emails.main", $data, function($message) use ($to_name, $to_email) {
-                $message->to($to_email, $to_name)->subject("¡Han respondido tu oferta de trabajo!");
+                $message->to($to_email, $to_name)->subject("¡Han solicitado un servicio!");
                 $message->from( env('MAIL_FROM_ADDRESS'), env('MAIL_FROM_NAME'));
             });
+
+            return response()->json(["success" => true, "msg" => "Tu solicitud ha sido enviado, te contactaremos en breve"]);
 
         }catch(\Exception $e){  
 
