@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests\AppointmentRequest;
+use Carbon\Carbon;
 
 class AppointmentController extends Controller
 {
@@ -13,7 +14,7 @@ class AppointmentController extends Controller
         try{
 
             $messageMail =  "<p><strong>Fecha: </strong>".$request->date."</p>".
-                            "<p><strong>Hora: </strong>".$request->time."</p>".
+                            "<p><strong>Hora: </strong>".Carbon::parse($request->time)->format('H:i')."</p>".
                             "<p><strong>Nombre: </strong>".$request->name."</p>".
                             "<p><strong>Correo: </strong>".$request->email."</p>".
                             "<p><strong>Teléfono: </strong>".$request->phone."</p>";
