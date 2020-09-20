@@ -22,7 +22,7 @@ class LawyerContactController extends Controller
 
             $data = ["messageMail" => $messageMail, "title" => "Te ha contactado un abogado"];
             $to_name = "Admin";
-            $to_email = env('MAIL_FROM_ADDRESS');
+            $to_email = env('ADMIN_MAIL');
 
             \Mail::send("emails.main", $data, function($message) use ($to_name, $to_email) {
                 $message->to($to_email, $to_name)->subject("Te ha contactado un abogado!");

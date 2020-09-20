@@ -25,7 +25,7 @@ class AppointmentController extends Controller
 
             \Mail::send("emails.main", $data, function($message) use ($to_name, $to_email) {
                 $message->to($to_email, $to_name)->subject("¡Han solicitado una cita!");
-                $message->from( env('MAIL_FROM_ADDRESS'), env('MAIL_FROM_NAME'));
+                $message->from( env('MAIL_FROM_ADDRESS'), env('ADMIN_MAIL'));
             });
 
             return response()->json(["success" => true, "msg" => "Tu cita ha sido enviada, le responderemos a su correo en breve"]);
