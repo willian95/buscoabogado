@@ -25,7 +25,7 @@ class ServiceController extends Controller
             $to_name = "Admin";
             $to_email = env('MAIL_FROM_ADDRESS');
 
-            \Mail::send("emails.proposalNotification", $data, function($message) use ($to_name, $to_email) {
+            \Mail::send("emails.main", $data, function($message) use ($to_name, $to_email) {
                 $message->to($to_email, $to_name)->subject("¡Han respondido tu oferta de trabajo!");
                 $message->from( env('MAIL_FROM_ADDRESS'), env('MAIL_FROM_NAME'));
             });
