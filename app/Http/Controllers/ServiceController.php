@@ -31,7 +31,7 @@ class ServiceController extends Controller
                 $message->from( env('MAIL_FROM_ADDRESS'), env('MAIL_FROM_NAME'));
             });
 
-            return response()->json(["success" => true, "msg" => "Tu solicitud ha sido enviado, te contactaremos en breve"]);
+            return response()->json(["success" => true, "msg" => "Tu solicitud ha sido enviado, te contactaremos por correo en breve"]);
 
         }catch(\Exception $e){  
 
