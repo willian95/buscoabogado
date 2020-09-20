@@ -30,6 +30,7 @@ class ServiceRequest extends FormRequest
             "client_rut"=> "required",
             "client_city"=> "required",
             "client_email"=> "required",
+            "client_commune"=> "required",
             "client_phone"=> "required",
             "client_description"=> "required"
         ];
@@ -43,6 +44,7 @@ class ServiceRequest extends FormRequest
             "client_name.required" => "Su nombre es requerido",
             "client_rut.required"=> "su RUT es requerido",
             "client_city.required"=> "Su ciudad es requerida",
+            "client_commune.required"=> "Su comuna es requerida",
             "client_email.required"=> "Su email es requerido",
             "client_phone.required"=> "Su teléfono es requerido",
             "client_description.required"=> "La descripción de su caso es requerida"
