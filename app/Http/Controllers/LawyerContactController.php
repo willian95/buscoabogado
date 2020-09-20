@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests\LawyerContactRequest;
+use Carbon\Carbon;
 
 class LawyerContactController extends Controller
 {
@@ -17,7 +18,7 @@ class LawyerContactController extends Controller
                             "<p><strong>Especialidad: </strong>".$request->specialty."</p>".
                             "<p><strong>Correo: </strong>".$request->email."</p>".
                             "<p><strong>Teléfono: </strong>".$request->phone."</p>".
-                            "<p><strong>Fecha de egreso: </strong>".$request->graduated_date."</p>";
+                            "<p><strong>Fecha de egreso: </strong>".Carbon::parse($request->graduated_date)->format('d/m/Y')."</p>";
 
             $data = ["messageMail" => $messageMail, "title" => "Te ha contactado un abogado"];
             $to_name = "Admin";
