@@ -19,7 +19,7 @@ class AppointmentController extends Controller
                             "<p><strong>Correo: </strong>".$request->email."</p>".
                             "<p><strong>Teléfono: </strong>".$request->phone."</p>";
 
-            $data = ["messageMail" => $messageMail, "title" => $request->name." ha solicitado una cia"];
+            $data = ["messageMail" => $messageMail, "title" => $request->name." ha solicitado una cita"];
             $to_name = "Admin";
             $to_email = env('MAIL_FROM_ADDRESS');
 
