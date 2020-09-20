@@ -8,13 +8,11 @@ use App\Http\Requests\ServiceRequest;
 class LawyerContactController extends Controller
 {
     
-    function chooseService(ServiceRequest $request){
+    function contact(ServiceRequest $request){
 
         try{
 
-            $messageMail =  
-                            
-                            "<p><strong>Nombre: </strong>".$request->name."</p>".
+            $messageMail =  "<p><strong>Nombre: </strong>".$request->name."</p>".
                             "<p><strong>RUT: </strong>".$request->rut."</p>".
                             "<p><strong>Especialidad: </strong>".$request->specialty."</p>".
                             "<p><strong>Correo: </strong>".$request->email."</p>".
