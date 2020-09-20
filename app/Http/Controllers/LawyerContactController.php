@@ -3,12 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Requests\ServiceRequest;
+use App\Http\Requests\LawyerContactRequest;
 
 class LawyerContactController extends Controller
 {
     
-    function contact(ServiceRequest $request){
+    function contact(LawyerContactRequest $request){
 
         try{
 
