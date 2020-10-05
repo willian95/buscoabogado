@@ -74,10 +74,10 @@ const app = new Vue({
                             title: "Excelente!",
                             text: res.data.msg,
                             icon: "success"
-                        }).then(res => {
+                        }).then(() => {
                             window.location.href = res.data.url
                         });
-                        
+
                         this.email = ""
                         this.password = ""
 
