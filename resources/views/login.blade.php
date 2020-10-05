@@ -5,15 +5,15 @@
 
         <div class="row">
             <div class="login100-more mask col-md-6"
-                style="background-image: url('https://images.unsplash.com/photo-1557827999-c0bb00bbee13?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=755&q=80');">
+                style="background-image: url('https://images.unsplash.com/photo-1587846814306-22afe89cacfe?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80');">
 
 
                 <p>Busco Abogado</p>
             </div>
             <div class="login100-form validate-form col-md-6">
-                <span class="login100-form-title p-b-43">
+                <!--<span class="login100-form-title p-b-43">
                     <img class="logo-admin" src="https://imgfz.com/i/0tkLDsf.png" alt="">
-                </span>
+                </span>-->
 
 
                 <div class="wrap-input100 validate-input">
@@ -70,23 +70,24 @@ const app = new Vue({
 
                     if (res.data.success == true) {
 
-                        /*swal({
+                        swal({
                             title: "Excelente!",
                             text: res.data.msg,
                             icon: "success"
-                        });*/
+                        }).then(res => {
+                            window.location.href = res.data.url
+                        });
+                        
                         this.email = ""
                         this.password = ""
 
-                        window.location.href = res.data.url
-
                     } else {
-                        /*swal({
+                        swal({
                             title: "Lo sentimos!",
                             text: res.data.msg,
                             icon: "error"
-                        });*/
-                        alert(res.data.msg)
+                        });
+                        //alert(res.data.msg)
                     }
 
                 })

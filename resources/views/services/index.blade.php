@@ -322,25 +322,25 @@
 
                         if(res.data.success == true){
 
-                            /*swal({
+                            swal({
                                 title: "¡Excelente!",
                                 text: res.data.msg,
                                 icon: "success",
-                            })*/
+                            })
 
-                            alert(res.data.msg)
+                            //alert(res.data.msg)
                             this.status = ""
                             this.fetch()
 
                         }else{
 
-                            /*swal({
+                            swal({
                                 title: "Lo Sentimos!",
                                 text: res.data.msg,
                                 icon: "error",
-                            })*/
+                            })
 
-                            alert(res.data.msg)
+                            //alert(res.data.msg)
 
                         }
 
