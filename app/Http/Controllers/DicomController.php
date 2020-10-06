@@ -56,7 +56,7 @@ class DicomController extends Controller
 
     function return(Request $request){
         
-        dd($request->all());
+        dd($request->token[0]);
 
         //payment/getStatus
         $secretKey = env('FLOW_SECRET_KEY');
