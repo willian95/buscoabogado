@@ -80,6 +80,8 @@ class DicomController extends Controller
             "s" => $signature
         ]);
 
+        dd($response);
+
     }
 
 }
