@@ -53,7 +53,7 @@ class DicomController extends Controller
 
     function return(Request $request){
         
-        dd($request);
+        dd($request->all());
 
     }
 
