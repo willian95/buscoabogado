@@ -50,13 +50,35 @@ class DicomController extends Controller
 
     function confirmation(Request $request){
 
-        dd($request->all());
+        //dd($request->all());
 
     }
 
     function return(Request $request){
         
-        Session::put("response", $request->all());
+        //dd($request->all());
+
+        //payment/getStatus
+
+        $params = array( 
+            "apiKey" => env('FLOW_API_KEY'),
+            "token" => $request->token,
+        ); 
+        $keys = array_keys($params);
+        sort($keys);
+        
+        $toSign = "";
+        foreach($keys as $key) {
+            $toSign .= $key . $params[$key];
+        };
+        
+        $signature = hash_hmac('sha256', $toSign , $secretKey);
+
+        $response = Http::asForm()->post(env('FLOW_URL').'payment/getStatus', [
+            "apiKey" => env('FLOW_API_KEY'),
+            "token" => $request->token,
+            "s" => $signature
+        ]);
 
     }
 
