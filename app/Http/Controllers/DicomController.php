@@ -51,8 +51,10 @@ class DicomController extends Controller
 
     }
 
-    function return(){
+    function return(Request $request){
         
+        dd($request);
+
     }
 
 }
