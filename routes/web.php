@@ -39,4 +39,4 @@ Route::get("appointments/fetch/{page}", "AppointmentController@fetch")->middlewa
 Route::post("appointments/update", "AppointmentController@update")->middleware("auth");
 
 Route::get("/confirmation", "DicomController@confirmation");
-Route::get("/return", "DicomController@return");
+Route::post("/return", "DicomController@return");
