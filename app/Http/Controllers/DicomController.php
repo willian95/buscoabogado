@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
+use Session;
 
 class DicomController extends Controller
 {
@@ -47,13 +48,15 @@ class DicomController extends Controller
 
     }
 
-    function confirmation(){
+    function confirmation(Request $request){
+
+        dd($request->all());
 
     }
 
     function return(Request $request){
         
-        dd($request->all());
+        Session::put("response", $request->all());
 
     }
 

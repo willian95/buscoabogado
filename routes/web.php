@@ -38,5 +38,5 @@ Route::get("appointments", "AppointmentController@index")->name("appointments")-
 Route::get("appointments/fetch/{page}", "AppointmentController@fetch")->middleware("auth");
 Route::post("appointments/update", "AppointmentController@update")->middleware("auth");
 
-Route::get("/confirmation", "DicomController@confirmation");
+Route::post("/confirmation", "DicomController@confirmation");
 Route::post("/return", "DicomController@return");
