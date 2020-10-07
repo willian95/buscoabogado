@@ -80,7 +80,7 @@ class DicomController extends Controller
             "s" => $signature
         ]);
 
-        return view("");
+        return view("confirmation");
 
     }
 
