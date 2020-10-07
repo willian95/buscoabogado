@@ -98,14 +98,14 @@ License: You must have a valid license purchased only from themeforest(the above
 								
 								<li class="menu-item" aria-haspopup="true">
 									<a href="{{ route('services') }}" class="menu-link">
-										<i class="menu-icon far fa-address-book"></i>
+										<i class="menu-icon fas fa-boxes"></i>
 										<span class="menu-text">Servicios</span>
 									</a>
 								</li>
 
 								<li class="menu-item" aria-haspopup="true">
 									<a href="{{ route('lawyers') }}" class="menu-link">
-										<i class="menu-icon far fa-address-book"></i>
+										<i class="menu-icon fas fa-user-tie"></i>
 										<span class="menu-text">Abogados</span>
 									</a>
 								</li>
@@ -119,14 +119,14 @@ License: You must have a valid license purchased only from themeforest(the above
 
 								<li class="menu-item" aria-haspopup="true">
 									<a href="{{ route('dicom') }}" class="menu-link">
-										<i class="menu-icon far fa-address-book"></i>
+										<i class="menu-icon far fa-money-bill-alt"></i>
 										<span class="menu-text">Dicom</span>
 									</a>
 								</li>
 
 								<li class="menu-item" aria-haspopup="true">
 									<a href="{{ route('logout') }}" class="menu-link">
-										<i class="menu-icon far fa-address-book"></i>
+										<i class="menu-icon far fa-power-off"></i>
 										<span class="menu-text">Cerrar Sesión</span>
 									</a>
 								</li>
