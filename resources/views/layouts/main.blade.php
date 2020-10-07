@@ -118,6 +118,13 @@ License: You must have a valid license purchased only from themeforest(the above
 								</li>
 
 								<li class="menu-item" aria-haspopup="true">
+									<a href="{{ route('dicom') }}" class="menu-link">
+										<i class="menu-icon far fa-address-book"></i>
+										<span class="menu-text">Dicom</span>
+									</a>
+								</li>
+
+								<li class="menu-item" aria-haspopup="true">
 									<a href="{{ route('logout') }}" class="menu-link">
 										<i class="menu-icon far fa-address-book"></i>
 										<span class="menu-text">Cerrar Sesión</span>

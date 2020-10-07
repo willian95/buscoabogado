@@ -21,7 +21,7 @@ class AppointmentController extends Controller
             $dataAmount = 20;
             $skip = ($page - 1) * $dataAmount;
 
-            $appointments = Appointment::skip($skip)->take($dataAmount)->get();
+            $appointments = Appointment::skip($skip)->take($dataAmount)->orderBy("id", "desc")->get();
             $appointmentsCount = Appointment::count();
 
             return response()->json(["success" => true, "appointments" => $appointments, "appointmentsCount" => $appointmentsCount, "dataAmount" => $dataAmount]);
@@ -42,7 +42,7 @@ class AppointmentController extends Controller
             $appointment->status = $request->status;
             $appointment->update();
             
-            /*if($request->status == "Aprobado"){
+            if($request->status == "Aprobado"){
                 $title = "Cita aprobada";
                 $messageMail =  "Hola ".$appointment->name.", hemos aceptado la cita para el ".$appointment->date." a las ".$appointment->time;
             }else if($request->status == "Rechazado"){
@@ -57,7 +57,7 @@ class AppointmentController extends Controller
             \Mail::send("emails.main", $data, function($message) use ($to_name, $to_email) {
                 $message->to($to_email, $to_name)->subject($title);
                 $message->from( env('MAIL_FROM_ADDRESS'), env('ADMIN_MAIL'));
-            });*/
+            });
 
             return response()->json(["success" => true, "msg" => "Se ha actualizado la cita, le enviaremos un correo al cliente"]);
 
@@ -81,7 +81,7 @@ class AppointmentController extends Controller
             $appointment->phone = $request->phone;
             $appointment->save();
 
-            /*$messageMail =  "<p><strong>Fecha: </strong>".Carbon::parse($request->date)->format('d-m-Y')."</p>".
+            $messageMail =  "<p><strong>Fecha: </strong>".Carbon::parse($request->date)->format('d-m-Y')."</p>".
                             "<p><strong>Hora: </strong>".Carbon::parse($request->time)->format('H:i')."</p>".
                             "<p><strong>Nombre: </strong>".$request->name."</p>".
                             "<p><strong>Correo: </strong>".$request->email."</p>".
@@ -94,7 +94,7 @@ class AppointmentController extends Controller
             \Mail::send("emails.main", $data, function($message) use ($to_name, $to_email) {
                 $message->to($to_email, $to_name)->subject("¡Han solicitado una cita!");
                 $message->from( env('MAIL_FROM_ADDRESS'), env('ADMIN_MAIL'));
-            });*/
+            });
 
             return response()->json(["success" => true, "msg" => "Tu cita ha sido enviada, le responderemos a su correo en breve"]);
 

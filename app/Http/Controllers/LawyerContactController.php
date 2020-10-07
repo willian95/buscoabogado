@@ -20,7 +20,7 @@ class LawyerContactController extends Controller
             $dataAmount = 20;
             $skip = ($page - 1) * $dataAmount;
 
-            $lawyers = Lawyer::skip($skip)->take($dataAmount)->get();
+            $lawyers = Lawyer::skip($skip)->take($dataAmount)->orderBy("id", "desc")->get();
             $lawyersCount = Lawyer::count();
 
             return response()->json(["success" => true, "lawyers" => $lawyers, "lawyersCount" => $lawyersCount, "dataAmount" => $dataAmount]);
@@ -45,7 +45,7 @@ class LawyerContactController extends Controller
             $lawyer->date = Carbon::parse($request->graduated_date)->format('d-m-Y');
             $lawyer->save();
 
-            /*$messageMail =  "<p><strong>Nombre: </strong>".$request->name."</p>".
+            $messageMail =  "<p><strong>Nombre: </strong>".$request->name."</p>".
                             "<p><strong>RUT: </strong>".$request->rut."</p>".
                             "<p><strong>Especialidad: </strong>".$request->specialty."</p>".
                             "<p><strong>Correo: </strong>".$request->email."</p>".
@@ -59,7 +59,7 @@ class LawyerContactController extends Controller
             \Mail::send("emails.main", $data, function($message) use ($to_name, $to_email) {
                 $message->to($to_email, $to_name)->subject("Te ha contactado un abogado!");
                 $message->from( env('MAIL_FROM_ADDRESS'), env('MAIL_FROM_NAME'));
-            });*/
+            });
 
             return response()->json(["success" => true, "msg" => "Tu solicitud ha sido enviado, te contactaremos en breve"]);
 

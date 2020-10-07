@@ -84,7 +84,7 @@ class ServiceController extends Controller
             $service->description = $request->client_description;
             $service->save();
 
-            /*$messageMail =  "<p><strong>Tipo de caso: </strong>".$request->client_case."</p>".
+            $messageMail =  "<p><strong>Tipo de caso: </strong>".$request->client_case."</p>".
                             "<p><strong>Categoría: </strong>".$request->client_category."</p>".
                             "<p><strong>Nombre: </strong>".$request->client_name."</p>".
                             "<p><strong>RUT: </strong>".$request->client_rut."</p>".
@@ -101,7 +101,7 @@ class ServiceController extends Controller
             \Mail::send("emails.main", $data, function($message) use ($to_name, $to_email) {
                 $message->to($to_email, $to_name)->subject("¡Han solicitado un servicio!");
                 $message->from( env('MAIL_FROM_ADDRESS'), env('MAIL_FROM_NAME'));
-            });*/
+            });
 
             return response()->json(["success" => true, "msg" => "Tu solicitud ha sido enviada, te contactaremos en breve"]);
 
