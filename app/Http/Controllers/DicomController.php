@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
-use Session;
+use App\Payment;
 
 class DicomController extends Controller
 {
@@ -80,9 +80,23 @@ class DicomController extends Controller
             "s" => $signature
         ]);
 
-        dd($request->token);
+        $payment = new Payment;
+        $payment->token = $request->token;
+        $payment->save();
 
         return view("confirmation");
+
+    }
+
+    function check(Request $request){
+        
+        if(Payment::where("token", $request->token)->count() > 0){
+
+            return response()->json(["exists" => true]);
+
+        }else{
+            return response()->json(["exists" => false]);
+        }
 
     }
 

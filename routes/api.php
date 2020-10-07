@@ -25,3 +25,5 @@ Route::post("/service", "ServiceController@chooseService");
 Route::post("/lawyer-contact", "LawyerContactController@contact");
 
 Route::post("/appointment", "AppointmentController@appointment");
+
+Route::post("/dicom/token/check", "DicomController@check");
