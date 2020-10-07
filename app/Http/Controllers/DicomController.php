@@ -84,6 +84,8 @@ class DicomController extends Controller
         $payment->token = $request->token;
         $payment->save();
 
+        dd(json_encode($response->body()));
+
         return view("confirmation");
 
     }
