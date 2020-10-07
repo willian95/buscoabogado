@@ -73,7 +73,7 @@ class DicomController extends Controller
         };
         
         $signature = hash_hmac('sha256', $toSign , $secretKey);
-
+        dd(env('FLOW_URL').'payment/getStatus');
         $response = Http::post(env('FLOW_URL').'payment/getStatus', [
             "apiKey" => env('FLOW_API_KEY'),
             "token" => $request->token,
