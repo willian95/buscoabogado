@@ -80,13 +80,14 @@ class DicomController extends Controller
             "s" => $signature
         ]);
 
-        /*$payment = new Payment;
+        $data = json_decode($response->body());
+
+        $payment = new Payment;
         $payment->token = $request->token;
-        $payment->save();*/
+        $payment->status = $data->status;
+        $payment->save();
 
-        dd(json_decode($response->body()));
-
-        return view("confirmation");
+        return view("confirmation", ["payment" => $payment]);
 
     }
 
