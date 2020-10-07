@@ -103,4 +103,21 @@ class DicomController extends Controller
 
     }
 
+    function complete(Request $request){
+
+        if(Payment::where("token", $request->token)->first()){
+
+            $payment = Payment::where("token", $request->token)->first();
+            $payment->name = $request->name;
+            $request->email = $request->email;
+            $request->phone = $request->phone;
+            $request->rut = $request->rut;
+            $request->update();
+            
+        }
+
+        return response()->json(["success" => true]);
+
+    }
+
 }
