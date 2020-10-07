@@ -109,10 +109,10 @@ class DicomController extends Controller
 
             $payment = Payment::where("token", $request->token)->first();
             $payment->name = $request->name;
-            $request->email = $request->email;
-            $request->phone = $request->phone;
-            $request->rut = $request->rut;
-            $request->update();
+            $payment->email = $request->email;
+            $payment->phone = $request->phone;
+            $payment->rut = $request->rut;
+            $payment->update();
             
         }
 
