@@ -17,7 +17,7 @@
                     <div class="card-body d-flex flex-column">
                         
                         <!--begin: Datatable-->
-                        <div class="datatable datatable-bordered datatable-head-custom datatable-default datatable-primary datatable-loaded" id="kt_datatable" style="">
+                        <div class="datatable datatable-bordered datatable-head-custom datatable-default datatable-primary datatable-loaded table-responsive" id="kt_datatable" style="">
                                 <table class="table">
                                     <thead>
                                         <tr >
