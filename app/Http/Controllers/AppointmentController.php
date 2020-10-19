@@ -54,7 +54,7 @@ class AppointmentController extends Controller
             $to_name = $appointment->name;
             $to_email = $appointment->email;
 
-            \Mail::send("emails.main", $data, function($message) use ($to_name, $to_email) {
+            \Mail::send("emails.main", $data, function($message) use ($to_name, $to_email, $title) {
                 $message->to($to_email, $to_name)->subject($title);
                 $message->from( env('MAIL_FROM_ADDRESS'), env('ADMIN_MAIL'));
             });
