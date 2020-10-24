@@ -29,3 +29,5 @@ Route::post("/appointment", "AppointmentController@appointment");
 Route::post("/dicom/token/check", "DicomController@check");
 
 Route::post("/dicom/complete", "DicomController@complete");
+
+Route::get("/forensic/practice", "ForensicPracticeController@index");
