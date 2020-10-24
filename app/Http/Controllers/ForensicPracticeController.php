@@ -9,7 +9,7 @@ class ForensicPracticeController extends Controller
 {
     function index(){
         $fileArray = [];
-        $files = Storage::files('/public');
+        $files = Storage::files('/public/forensic/contracts');
 
         return response()->json(["files" => $files]);
     }
