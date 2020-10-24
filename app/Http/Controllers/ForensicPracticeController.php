@@ -13,7 +13,7 @@ class ForensicPracticeController extends Controller
 
         $i = 0;
         foreach($files as $file){
-            
+            dd($file);
             if($i < 20){
                 break;
             }
