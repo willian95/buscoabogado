@@ -19,6 +19,7 @@ class ForensicPracticeController extends Controller
             }
             
             $sanitizedFile = str_replace("forensic/contracts/", "", $file);
+            $sanitizedFile = str_replace(".doc", "", $sanitizedFile);
 
             array_push($fileArray, $sanitizedFile);
 
