@@ -102,6 +102,10 @@
                                     </th>
 
                                     <th class="datatable-cell datatable-cell-sort">
+                                        <span style="width: 250px;">Ciudad</span>
+                                    </th>
+
+                                    <th class="datatable-cell datatable-cell-sort">
                                         <span style="width: 250px;">Teléfono</span>
                                     </th>
 
@@ -117,6 +121,9 @@
                                     </td>
                                     <td class="datatable-cell">
                                         @{{ payment.email }}
+                                    </td>
+                                    <td class="datatable-cell">
+                                        @{{ payment.city }}
                                     </td>
                                     <td>
                                         @{{ payment.phone }}

@@ -102,6 +102,10 @@
                                     </th>
 
                                     <th class="datatable-cell datatable-cell-sort">
+                                        <span style="width: 250px;">Ciudad</span>
+                                    </th>
+
+                                    <th class="datatable-cell datatable-cell-sort">
                                         <span style="width: 250px;">Fecha</span>
                                     </th>
 
@@ -123,6 +127,9 @@
                                     </td>
                                     <td class="datatable-cell">
                                         @{{ appointment.email }}
+                                    </td>
+                                    <td class="datatable-cell">
+                                        @{{ appointment.city }}
                                     </td>
                                     <td>
                                         @{{ appointment.phone }}
@@ -195,7 +202,7 @@
                                 <div class="col-md-12">
                                     <div style="display:flex; justify-content: center;">
                                         <button class="btn btn-success"  @click="update('Aprobado')" style="margin-right: 10px;" data-dismiss="modal">Aceptar</button>
-                                        <button class="btn btn-secondary" @click="update('Rechazado')" data-dismiss="modal">Rechazar</button>
+                                        <button class="btn btn-secondary" data-toggle="modal" data-target="#rejectModal" data-dismiss="modal">Rechazar</button>
                                     </div>
                                 </div>
                                 
@@ -205,6 +212,36 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-light-primary font-weight-bold" data-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="rejectModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Texto</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <i aria-hidden="true" class="ki ki-close"></i>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container">
+                            <div class="row">
+                                
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <textarea class="form-control" rows="5" v-model="text"></textarea>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-light-primary font-weight-bold" data-dismiss="modal" @click="update('Rechazado')">Enviar</button>
                     </div>
                 </div>
             </div>
@@ -226,6 +263,7 @@
                     appointments:[],
                     pages:0,
                     page:1,
+                    text:"",
                     loading:false
                 }
             },
@@ -253,7 +291,7 @@
                 },
                 update(status){
 
-                    axios.post("{{ url('appointments/update') }}", {id: this.id, status: status}).then(res => {
+                    axios.post("{{ url('appointments/update') }}", {id: this.id, status: status, text: this.text}).then(res => {
 
                         if(res.data.success == true){
 

@@ -46,8 +46,8 @@ class AppointmentController extends Controller
                 $title = "Cita aprobada";
                 $messageMail =  "Hola ".$appointment->name.", hemos aceptado la cita para el ".$appointment->date." a las ".$appointment->time;
             }else if($request->status == "Rechazado"){
-                $title = "Cita rechazada";
-                $messageMail =  "Hola ".$appointment->name.", lamentamos informarte que no podemos atenderte el ".$appointment->date." a las ".$appointment->time;
+                $title = "Cita no disponible";
+                $messageMail =  "Hola ".$appointment->name.", lamentamos informarte que no podemos atenderte el ".$appointment->date." a las ".$appointment->time." ".$request->text;
             }
 
             $data = ["messageMail" => $messageMail, "title" => $title];
@@ -79,6 +79,7 @@ class AppointmentController extends Controller
             $appointment->name = $request->name;
             $appointment->email = $request->email;
             $appointment->phone = $request->phone;
+            $appointment->city = $request->city;
             $appointment->save();
 
             $messageMail =  "<p><strong>Fecha: </strong>".Carbon::parse($request->date)->format('d-m-Y')."</p>".

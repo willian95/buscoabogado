@@ -137,6 +137,7 @@ class DicomController extends Controller
             $payment->email = $request->email;
             $payment->phone = $request->phone;
             $payment->rut = $request->rut;
+            $payment->city = $request->city;
             $payment->update();
 
             $messageMail =  "<p><strong>Nombre: </strong>".$request->name."</p>".             

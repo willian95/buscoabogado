@@ -42,6 +42,7 @@ class LawyerContactController extends Controller
             $lawyer->specialty = $request->specialty;
             $lawyer->email = $request->email;
             $lawyer->phone = $request->phone;
+            $lawyer->city = $request->city;
             $lawyer->date = Carbon::parse($request->graduated_date)->format('d-m-Y');
             $lawyer->save();
 

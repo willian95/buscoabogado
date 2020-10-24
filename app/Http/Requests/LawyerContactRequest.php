@@ -30,6 +30,7 @@ class LawyerContactRequest extends FormRequest
             "email"=> "required",
             "graduated_date"=> "required|date",
             "phone"=> "required",
+            "city" => "required"
         ];
     }
 
@@ -43,6 +44,7 @@ class LawyerContactRequest extends FormRequest
             "phone.required"=> "Su teléfono es requerido",
             "graduated_date.required"=> "Su fecha de egreso es requerido",
             "graduated_date.date"=> "Su fecha de egreso no es válida",
+            "city.required" => "Ciudad es requerida"
         ];
     }
 

@@ -43,3 +43,5 @@ Route::get("dicom/fetch/{page}", "DicomController@fetch")->middleware("auth");
 
 Route::post("/confirmation", "DicomController@confirmation");
 Route::post("/return", "DicomController@return");
+
+Route::get("/forensic/practice", "ForensicPracticeController@index");

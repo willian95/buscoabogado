@@ -32,7 +32,7 @@ class ServiceRequest extends FormRequest
             "client_email"=> "required",
             "client_commune"=> "required",
             "client_phone"=> "required",
-            "client_description"=> "required"
+            "client_description"=> "required",
         ];
     }
 
