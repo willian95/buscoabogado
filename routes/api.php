@@ -31,3 +31,4 @@ Route::post("/dicom/token/check", "DicomController@check");
 Route::post("/dicom/complete", "DicomController@complete");
 
 Route::get("/forensic/practice", "ForensicPracticeController@index");
+Route::post("/forensic/practice/search", "ForensicPracticeController@search");
