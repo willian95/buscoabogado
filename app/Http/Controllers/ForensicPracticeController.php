@@ -18,7 +18,9 @@ class ForensicPracticeController extends Controller
                 break;
             }
             
-            array_push($fileArray, $file);
+            $sanitizedFile = str_replace("forensic/contracts/", "", $file);
+
+            array_push($fileArray, $sanitizedFile);
 
             $i++;
         }
