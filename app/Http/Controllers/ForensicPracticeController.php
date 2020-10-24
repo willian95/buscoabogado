@@ -11,6 +11,10 @@ class ForensicPracticeController extends Controller
         $fileArray = [];
         $files = Storage::files('/forensic/contracts');
 
-        return response()->json(["files" => $files]);
+        foreach($files as $file){
+            array_push($fileArray, $file);
+        }
+
+        return response()->json(["files" => $fileArray]);
     }
 }
