@@ -109,6 +109,10 @@
                                         <span style="width: 250px;">Teléfono</span>
                                     </th>
 
+                                    <th class="datatable-cell datatable-cell-sort">
+                                        <span style="width: 250px;">Token</span>
+                                    </th>
+
                                 </tr>
                             </thead>
                             <tbody>
@@ -127,6 +131,9 @@
                                     </td>
                                     <td>
                                         @{{ payment.phone }}
+                                    </td>
+                                    <td>
+                                        @{{ payment.token }}
                                     </td>
                                 </tr>
                             </tbody>
