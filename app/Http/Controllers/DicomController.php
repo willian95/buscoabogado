@@ -107,12 +107,11 @@ class DicomController extends Controller
 
         $data = json_decode($response->body());
         
-        dd($data->flowOrder);
-
         $payment = new Payment;
         $payment->token = $request->token;
         $payment->status = $data->status;
         $payment->city = "test";
+        $payment->flow_order = $data->flowOrder;
         $payment->save();
 
         return view("confirmation", ["payment" => $payment]);

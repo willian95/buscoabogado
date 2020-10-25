@@ -133,7 +133,7 @@
                                         @{{ payment.phone }}
                                     </td>
                                     <td>
-                                        @{{ payment.token }}
+                                        @{{ payment.flow_order }}
                                     </td>
                                 </tr>
                             </tbody>
