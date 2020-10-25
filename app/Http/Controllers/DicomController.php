@@ -107,7 +107,7 @@ class DicomController extends Controller
 
         $data = json_decode($response->body());
         
-        dd($data);
+        dd($data->flowOrder);
 
         $payment = new Payment;
         $payment->token = $request->token;
