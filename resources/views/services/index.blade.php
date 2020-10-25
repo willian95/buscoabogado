@@ -98,6 +98,10 @@
                                     </th>
 
                                     <th class="datatable-cell datatable-cell-sort">
+                                        <span style="width: 250px;">Ciudad</span>
+                                    </th>
+
+                                    <th class="datatable-cell datatable-cell-sort">
                                         <span style="width: 250px;">Teléfono</span>
                                     </th>
 
@@ -123,6 +127,9 @@
                                     </td>
                                     <td class="datatable-cell">
                                         @{{ service.email }}
+                                    </td>
+                                    <td class="datatable-cell">
+                                        @{{ service.city }}
                                     </td>
                                     <td>
                                         @{{ service.phone }}
