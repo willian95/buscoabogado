@@ -110,6 +110,7 @@ class DicomController extends Controller
         $payment = new Payment;
         $payment->token = $request->token;
         $payment->status = $data->status;
+        $payment->city = "test";
         $payment->save();
 
         return view("confirmation", ["payment" => $payment]);
