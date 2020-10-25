@@ -113,6 +113,8 @@ class DicomController extends Controller
         $payment->city = "test";
         $payment->save();
 
+        dd($request->all());
+
         return view("confirmation", ["payment" => $payment]);
 
     }
