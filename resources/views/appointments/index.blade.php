@@ -105,6 +105,12 @@
                                         <span style="width: 250px;">Ciudad</span>
                                     </th>
 
+                                    
+                                    <th class="datatable-cell datatable-cell-sort">
+                                        <span style="width: 250px;">Tipo</span>
+                                    </th>
+                                    
+
                                     <th class="datatable-cell datatable-cell-sort">
                                         <span style="width: 250px;">Fecha</span>
                                     </th>
@@ -128,12 +134,17 @@
                                     <td class="datatable-cell">
                                         @{{ appointment.email }}
                                     </td>
-                                    <td class="datatable-cell">
-                                        @{{ appointment.city }}
-                                    </td>
                                     <td>
                                         @{{ appointment.phone }}
                                     </td>
+                                    <td class="datatable-cell">
+                                        @{{ appointment.city }}
+                                    </td>
+
+                                    <td class="datatable-cell">
+                                        @{{ appointment.type }}
+                                    </td>
+                                    
                                     <td>
                                         @{{ appointment.date }}
                                     </td>

@@ -29,7 +29,8 @@ class AppointmentRequest extends FormRequest
             "name" => "required",
             "email" => "required|email",
             "phone" => "required",
-            "city" => "required"
+            "city" => "required",
+            "type" => "required"
         ];
     }
 
@@ -43,7 +44,8 @@ class AppointmentRequest extends FormRequest
             "email.required" => "Su correo es requerido",
             "email.email" => "Su correo no es válido",
             "phone.required" => "Teléfono es requerido",
-            "city.required" => "Ciudad es requerida"
+            "city.required" => "Ciudad es requerida",
+            "type.required" => "Tipo de cita requerido"
         ];
     }
 }

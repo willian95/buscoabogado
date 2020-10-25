@@ -79,6 +79,7 @@ class AppointmentController extends Controller
             $appointment->name = $request->name;
             $appointment->email = $request->email;
             $appointment->phone = $request->phone;
+            $appointment->type = $request->type;
             $appointment->city = $request->city;
             $appointment->save();
 
